@@ -6,7 +6,7 @@
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="format-detection" content="telephone=no">
-  <title>Файлообменник</title>
+  <title>Файлы онлайн</title>
   <style>
     @font-face {
       font-family:'OpenSans';
@@ -144,12 +144,17 @@
       text-align: center;
     }
 
-    .offer span {
+    .offer span,
+    .offer a {
       font-family: 'Open Sans', sans-serif;
       font-size: 9px;
       line-height: 1;
       color: #e3dede;
       opacity: 0.6;
+    }
+
+    .offer a {
+      opacity: 1;
     }
 
 
@@ -312,7 +317,7 @@
     .main .btn {
       position: relative;
       display: inline-block;
-      width: 80vw;
+      width: 90vw;
       height: 20vh;
       text-decoration: none;
       text-transform: uppercase;
@@ -532,14 +537,19 @@
       }
     }
 
-    @media screen and (max-height: 570px) {
+    @media screen and (max-height: 540px) {
+      .rating {
+        top: 100%;
+        margin-top: 60px;
+      }
+
       .rating .graphic {
         display: none;
       }
 
       .rating .total {
         display: block;
-        width: 80vw;
+        width: 100%;
         margin: 0 auto;
       }
 
@@ -569,7 +579,7 @@
       .rating .total .users {
         display: table-cell;
         width: 100%;
-        font-size: 14px;
+        font-size: 18px;
         text-align: right;
       }
     }
@@ -580,19 +590,25 @@
       }
     }
 
-    @media screen and (max-height: 610px) {
-      .main .loading h1 {
-        display: none;
-      }
-    }
-
-    @media screen and (max-height: 470px) {
+    @media screen and (max-height: 450px) {
       .main .loading {
         display: none;
       }
     }
 
-    @media screen and (max-height: 280px) and (orientation: landscape) {
+    @media screen and (max-height: 590px) {
+      .main .loading h1 {
+        display: none;
+      }
+    }
+
+    @media screen and (max-height: 380px) {
+      .main .loading {
+        display: none;
+      }
+    }
+
+    @media screen and (max-height: 240px) and (orientation: landscape) {
       .main .inner {
         display: table-cell;
         vertical-align: middle;
@@ -642,7 +658,7 @@
 
 <body>
 <div class="offer">
-  <span>Нажатием на кнопку "Смотреть" Вы подтверждаете свое согласие с подключением подписки и Условиями предоставления подписки. Стоимость подписки 35.0 руб. с учетом НДС за 1 день. Оплата производится с основного счета. Услуга предоставляется Контент-провайдером Согласие.</span>
+  <span>Нажатием на кнопку "Название кнопки Активации" Вы подтверждаете свое согласие с подключением подписки SUBNAME и <a href="http://podpiski.megafon.ru/col/mds4/web/jsp/files/oferta.pdf">Условиями предоставления подписки</a>. Стоимость подписки SUBPRICE.ACCOUNT. Услуга предоставляется Контент-провайдером PROVIDER.</span>
 </div>
 <div class="header">
   <div class="inner">
@@ -650,7 +666,7 @@
       <button></button>
     </div>
     <div class="name">
-      <span>Файлообменник</span>
+      <span>Файлы онлайн</span>
     </div>
     <div class="plus18 hidden"></div>
   </div>
@@ -674,11 +690,11 @@
           </div>
         </div>
       </div>
-      <a class="btn" id="btn" href="#">
+      <a class="btn" id="btn" href="#<TARIF_YES_URL>">
         <span>Скачать</span>
       </a>
       <div class="cancel">
-        <a href="#">
+        <a href="#<TARIF_NO_URL>">
           <span>Отмена</span>
         </a>
       </div>
@@ -720,8 +736,7 @@
 
 <div class="footer" id="footer">
   <p>
-    Информация для абонентов - тел. 8 800 500-25-43 (бесплатно в домашнем регионе) | <a href="#">Правила подписки
-    поставщика</a> услуг | <a href="#">Личный кабинет</a>
+    Информация для абонентов - тел. 8 800 500-25-43 (бесплатно в домашнем регионе) | <a href="ВАША ССЫЛКА НА ПРАВИЛА ПОДПИСКИ">Правила подписки поставщика услуг</a> | <a href="#<LK_LINK_URL>">Личный кабинет</a>
   </p>
 </div>
 
@@ -733,7 +748,7 @@
         footer['style']['bottom'] = "auto";
         footer['style']['top'] = (window['innerHeight'] - footer.offsetHeight) + 'px';
         if ((window['innerHeight'] > 212) && (window['innerHeight'] < 233)) {
-            buttonWrap['style']['marginTop'] = '-'+ (footer.offsetHeight-45) + 'px';
+            buttonWrap['style']['marginTop'] = '-'+ (footer.offsetHeight-35) + 'px';
         } else { buttonWrap['style']['marginTop'] = 0; }
 
         document.body.style.height = window.innerHeight + 'px';
