@@ -109,7 +109,7 @@ html {
 }
 
 body {
-	position: relative;
+	position: fixed;
 	display: table;
 	height: 100%;
 	width: 100%;
@@ -119,6 +119,7 @@ body {
 	-ms-text-size-adjust: 100%;
 	-moz-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
+	overflow: hidden;
 }
 
 img {
@@ -145,6 +146,7 @@ img {
 .offer .inner {
 	position: relative;
 	width: 100%;
+	padding: 2px;
 }
 
 .offer span, .offer a {
